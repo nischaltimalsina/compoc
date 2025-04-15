@@ -1,32 +1,16 @@
 "use client";
+import { useFramework } from "@/components/context/framework-provider";
 import { PageHeader } from "@/components/layout/layout-components";
 import sampleData from "@/data/sample-data";
-import { useRouter } from "next/navigation";
-import React from "react";
-
-// Create a client-side context for sharing selected framework across pages
 import { Framework } from "@/lib/types";
-import { createContext } from "react";
-
-// Create context to store selected framework
-export const FrameworkContext = createContext<{
-  selectedFramework: Framework | null;
-  setSelectedFramework: (framework: Framework | null) => void;
-}>({
-  selectedFramework: null,
-  setSelectedFramework: () => {},
-});
+import { useRouter } from "next/navigation";
 
 const FrameworkSelection = () => {
   const router = useRouter();
+  const { setSelectedFramework } = useFramework();
 
   const handleFrameworkSelect = (framework: Framework) => {
-
-    // Store in session storage for persistence across pages
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("selectedFramework", JSON.stringify(framework));
-    }
-
+    setSelectedFramework(framework);
     router.push("/implementation/scope-definition");
   };
 
@@ -39,7 +23,7 @@ const FrameworkSelection = () => {
       />
 
       <div className="mb-6 rounded-lg bg-white p-6 shadow">
-        <h2 className="mb-4 text-lg font-medium text-gray-800">Framework Selection</h2>
+        <h2 className="mb-4 text-lg font-medium text-gray-800">Step 1: Framework Selection</h2>
         <p className="mb-6 text-gray-600">
           Choose a compliance framework to start the implementation workflow.
         </p>
