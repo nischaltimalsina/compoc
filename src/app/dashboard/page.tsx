@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { Shield, AlertTriangle, Layers, Database, ArrowRight, RefreshCw } from "lucide-react";
 import { PageHeader } from "@/components/layout/layout-components";
 import { StatusBadge } from "@/components/ui/badges";
-import { PageProps, DashboardStat } from "@/lib/types";
+import { DashboardStat } from "@/lib/types";
 import sampleData from "@/data/sample-data";
 
 // Dashboard Component
-const Dashboard: React.FC<PageProps> = ({ setActiveScreen }) => {
+const Dashboard = () => {
   // Stats for dashboard
   const stats: DashboardStat[] = [
     {
@@ -136,12 +137,12 @@ const Dashboard: React.FC<PageProps> = ({ setActiveScreen }) => {
               <p className="text-2xl font-bold text-green-600">{lowRisks}</p>
             </div>
           </div>
-          <button
-            onClick={() => setActiveScreen && setActiveScreen("risk-management")}
+          <Link
+            href="/risk-management"
             className="mt-4 flex items-center text-sm text-blue-600 hover:text-blue-800"
           >
             View all risks <ArrowRight size={16} className="ml-1" />
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -151,12 +152,12 @@ const Dashboard: React.FC<PageProps> = ({ setActiveScreen }) => {
         <div className="rounded-lg bg-white p-6 shadow">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-medium text-gray-800">Implementation Tasks</h2>
-            <button
-              onClick={() => setActiveScreen && setActiveScreen("control-implementation")}
+            <Link
+              href="/implementation/control-implementation"
               className="text-sm text-blue-600 hover:text-blue-800"
             >
               View all
-            </button>
+            </Link>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -191,12 +192,12 @@ const Dashboard: React.FC<PageProps> = ({ setActiveScreen }) => {
         <div className="rounded-lg bg-white p-6 shadow">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-medium text-gray-800">Open Risks</h2>
-            <button
-              onClick={() => setActiveScreen && setActiveScreen("risk-management")}
+            <Link
+              href="/risk-management"
               className="text-sm text-blue-600 hover:text-blue-800"
             >
               View all
-            </button>
+            </Link>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -219,7 +220,15 @@ const Dashboard: React.FC<PageProps> = ({ setActiveScreen }) => {
                         {risk.description}
                       </td>
                       <td className="px-4 py-3">
-                        <span className={`bg-${risk.severity === 'High' ? 'red' : risk.severity === 'Medium' ? 'yellow' : 'green'}-100 text-${risk.severity === 'High' ? 'red' : risk.severity === 'Medium' ? 'yellow' : 'green'}-800 rounded-full px-2.5 py-0.5 text-xs font-medium`}>
+                        <span
+                          className={`${
+                            risk.severity === 'High'
+                              ? 'bg-red-100 text-red-800'
+                              : risk.severity === 'Medium'
+                              ? 'bg-yellow-100 text-yellow-800'
+                              : 'bg-green-100 text-green-800'
+                          } rounded-full px-2.5 py-0.5 text-xs font-medium`}
+                        >
                           {risk.severity}
                         </span>
                       </td>

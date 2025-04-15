@@ -27,7 +27,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
   }
 
   return (
-    <span className={`${bgColor} ${textColor} rounded-full px-2.5 py-0.5 text-xs font-medium`}>
+    <span className={`${bgColor} ${textColor} rounded-full whitespace-nowrap px-2.5 py-0.5 text-xs font-medium`}>
       {status}
     </span>
   );
@@ -54,7 +54,7 @@ export const SeverityBadge: React.FC<SeverityBadgeProps> = ({ severity }) => {
   }
 
   return (
-    <span className={`${bgColor} ${textColor} rounded-full px-2.5 py-0.5 text-xs font-medium`}>
+    <span className={`${bgColor} ${textColor} whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium`}>
       {severity}
     </span>
   );
