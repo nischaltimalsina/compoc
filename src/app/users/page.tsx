@@ -1,11 +1,9 @@
 "use client";
 import { PageHeader } from "@/components/layout/layout-components";
 import sampleData from "@/data/sample-data";
-import { PageProps } from "@/lib/types";
 import { Filter, Mail, Search, Settings, UserPlus } from "lucide-react";
-import React from "react";
 
-const UserDirectory: React.FC<PageProps> = () => {
+const UserDirectory = () => {
   // Helper function to get department name
   const getDepartmentName = (deptId: string): string => {
     const department = sampleData.departments.find(d => d.id === deptId);

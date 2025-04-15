@@ -1,11 +1,9 @@
 "use client";
 import { PageHeader } from "@/components/layout/layout-components";
 import sampleData from "@/data/sample-data";
-import { PageProps } from "@/lib/types";
-import { Database, Download, Eye, FileText, Filter, Image as ImageIcon, Plus, Search } from "lucide-react";
-import React from "react";
+import { Database, Download, Eye, FileText, Filter, Image, Plus, Search } from "lucide-react";
 
-const EvidenceRepository: React.FC<PageProps> = () => {
+const EvidenceRepository = () => {
   // Add a few more evidence items to have a more populated table
   const extendedEvidenceData = [
     ...sampleData.evidence,
@@ -53,7 +51,7 @@ const EvidenceRepository: React.FC<PageProps> = () => {
       case "Document":
         return <FileText size={16} className="mr-2 text-blue-500" />;
       case "Screenshot":
-        return <ImageIcon size={16} className="mr-2 text-green-500" />;
+        return <Image size={16} className="mr-2 text-green-500" />;
       case "Report":
         return <Database size={16} className="mr-2 text-purple-500" />;
       default:
