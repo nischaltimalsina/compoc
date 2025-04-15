@@ -30,7 +30,7 @@ const GapAssessment = () => {
       />
 
       <div className="mb-6 rounded-lg bg-white p-6 shadow">
-        <h2 className="mb-4 text-lg font-medium text-gray-800">Step 3: Gap Assessment</h2>
+        <h2 className="mb-4 text-lg font-medium text-gray-800">Gap Assessment</h2>
         <p className="mb-6 text-gray-600">
           Evaluate your current compliance status against the selected framework.
         </p>

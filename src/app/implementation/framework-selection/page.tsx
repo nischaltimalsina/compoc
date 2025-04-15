@@ -39,7 +39,7 @@ const FrameworkSelection = () => {
       />
 
       <div className="mb-6 rounded-lg bg-white p-6 shadow">
-        <h2 className="mb-4 text-lg font-medium text-gray-800">Step 1: Framework Selection</h2>
+        <h2 className="mb-4 text-lg font-medium text-gray-800">Framework Selection</h2>
         <p className="mb-6 text-gray-600">
           Choose a compliance framework to start the implementation workflow.
         </p>

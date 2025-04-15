@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { Filter, Plus, Search } from "lucide-react";
 import { PageHeader } from "@/components/layout/layout-components";
 import { StatusBadge } from "@/components/ui/badges";
-import { PageProps } from "@/lib/types";
 import sampleData from "@/data/sample-data";
 
-const ControlLibrary: React.FC<PageProps> = ({ setActiveScreen }) => {
+const ControlLibrary: React.FC = () => {
   return (
     <div>
       <PageHeader title="Control Library">
@@ -81,12 +81,12 @@ const ControlLibrary: React.FC<PageProps> = ({ setActiveScreen }) => {
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-500">{control.owner}</td>
                 <td className="px-6 py-4 text-sm">
-                  <button
-                    onClick={() => setActiveScreen && setActiveScreen("control-implementation")}
+                  <Link
+                    href="/implementation/control-implementation"
                     className="text-blue-600 hover:text-blue-900"
                   >
                     Implement
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}

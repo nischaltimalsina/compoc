@@ -27,7 +27,7 @@ const RiskManagement = () => {
       </PageHeader>
 
       <div className="mb-6 rounded-lg bg-white p-6 shadow">
-        <h2 className="mb-4 text-lg font-medium text-gray-800">Step 4: Risk Management</h2>
+        <h2 className="mb-4 text-lg font-medium text-gray-800">Risk Management</h2>
         <p className="mb-6 text-gray-600">
           Identify, assess, and manage risks associated with non-compliant controls.
         </p>

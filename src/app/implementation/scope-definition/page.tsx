@@ -30,7 +30,7 @@ const ScopeDefinition = () => {
       />
 
       <div className="mb-6 rounded-lg bg-white p-6 shadow">
-        <h2 className="mb-4 text-lg font-medium text-gray-800">Step 2: Scope Definition</h2>
+        <h2 className="mb-4 text-lg font-medium text-gray-800">Scope Definition</h2>
         <p className="mb-6 text-gray-600">
           Define the scope of your {selectedFramework?.name || "framework"} implementation.
         </p>

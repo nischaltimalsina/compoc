@@ -25,7 +25,7 @@ const ControlImplementation = () => {
       </PageHeader>
 
       <div className="mb-6 rounded-lg bg-white p-6 shadow">
-        <h2 className="mb-4 text-lg font-medium text-gray-800">Step 5: Control Implementation</h2>
+        <h2 className="mb-4 text-lg font-medium text-gray-800"> Control Implementation</h2>
         <p className="mb-6 text-gray-600">
           Implement controls to address identified gaps and mitigate risks.
         </p>
